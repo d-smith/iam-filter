@@ -1,0 +1,14 @@
+{
+  "name": "iam-extractor",
+  "version": "0.0.1",
+  "description": "Extract IAM statements into a stand alone cfn template",
+  "main": "iamex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "yaml-cfn": "^0.2.0"
+  }
+}
