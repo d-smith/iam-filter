@@ -22,7 +22,7 @@ const retainResource = (resourceType) => {
 const getInputTemplate = () => {
     args = process.argv.slice(2);
     if(args.length != 1) {
-        console.log("Usage: node iamex.js <path to cfn file>");
+        console.log("Usage: node iamfilter.js <path to cfn file>");
         process.exit(1);
     }
 
