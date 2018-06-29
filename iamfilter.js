@@ -12,6 +12,7 @@ const retainResource = (resourceType) => {
     switch(resourceType) {
         case 'AWS::IAM::Role':
         case 'AWS::IAM::Policy':
+        case 'AWS::IAM::ManagedPolicy':
             return true;
         default:
             return false;

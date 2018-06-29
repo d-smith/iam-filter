@@ -1,6 +1,6 @@
 # iam-filter
 
-This project provides a simple utility to filter a cloud formation template to leave only IAM Role and IAM Policy resources in the template. This input is a YAML cloud formation template, the output is a cloud formation template containing only the IAM Role and Policy resources in JSON format (don't ask).
+This project provides a simple utility to filter a cloud formation template to leave only IAM Role, IAM Policy and IAM Managed Policy resources in the template. This input is a YAML cloud formation template, the output is a cloud formation template containing only the IAM Role and Policy resources in JSON format (don't ask).
 
 Usage:
 
