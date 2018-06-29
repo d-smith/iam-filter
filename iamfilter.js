@@ -18,32 +18,31 @@ const retainResource = (resourceType) => {
     }
 }
 
-
-const main = () => {
+const getInputTemplate = () => {
     args = process.argv.slice(2);
     if(args.length != 1) {
         console.log("Usage: node iamex.js <path to cfn file>");
         process.exit(1);
     }
 
-    let contents = readFileContent(args[0]);
-    parsed = yamlParse(contents);
-    resources = parsed['Resources'];
+    return readFileContent(args[0]);
+}
+
+const filterResources = (resources) => {
     Object.keys(resources).forEach((k) => {
-        console.log(k);
-        console.log(resources[k]['Type'])
-        console.log(retainResource(resources[k]['Type']));
-
         let retain = retainResource(resources[k]['Type']);
-
         if(retain == false) {
-            console.log(`delete ${k}`);
             delete resources[k];
         }
     });
+}
 
+
+const main = () => {
+    let contents = getInputTemplate();
+    parsed = yamlParse(contents);
+    filterResources(parsed['Resources']);
     console.log(JSON.stringify(parsed,null, '  '));
-
 }
 
 main();
