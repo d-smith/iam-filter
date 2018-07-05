@@ -46,9 +46,6 @@ const removeOutputs = (parsed) => {
 const main = () => {
     let contents = getInputTemplate();
     parsed = yamlParse(contents);
-    console.log('====================================================');
-    console.log(parsed);
-    console.log('====================================================');
     filterResources(parsed['Resources']);
     removeOutputs(parsed);
     console.log(JSON.stringify(parsed,null, '  '));
