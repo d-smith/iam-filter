@@ -38,11 +38,19 @@ const filterResources = (resources) => {
     });
 }
 
+const removeOutputs = (parsed) => {
+    delete parsed['Outputs'];
+}
+
 
 const main = () => {
     let contents = getInputTemplate();
     parsed = yamlParse(contents);
+    console.log('====================================================');
+    console.log(parsed);
+    console.log('====================================================');
     filterResources(parsed['Resources']);
+    removeOutputs(parsed);
     console.log(JSON.stringify(parsed,null, '  '));
 }
 
